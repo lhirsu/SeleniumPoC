@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
                 "json:target/report.json",
                 "junit:target/junit/junitResults.xml"
         },
-
+        glue = "com.selenium.poc.stepdefinitions",
         features = "src/test/resources/features",
         tags = "@regression"
 )
