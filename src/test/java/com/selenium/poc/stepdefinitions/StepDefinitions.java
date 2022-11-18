@@ -18,10 +18,10 @@ public class StepDefinitions {
     CartPage cartPage;
     HomePage homePage;
 
-    SoftAssertions softly = new SoftAssertions();
-    TreeMap<Double, List<String>> getPriceToProductIdListInfo;
-
     WebDriver driver;
+
+    SoftAssertions softly = new SoftAssertions();
+    TreeMap<Double, List<String>> priceToProductIdList;
 
     @Given("I navigate to home page")
     public void i_navigate_to_home_page() {
@@ -51,12 +51,12 @@ public class StepDefinitions {
 
     @When("I search for lowest price item")
     public void i_search_for_lowest_price_item() {
-        getPriceToProductIdListInfo = cartPage.getPriceToProductIdListInfo();
+        priceToProductIdList = cartPage.getPriceToProductIdListInfo();
     }
 
     @When("I am able to remove the lowest price item from my cart")
     public void i_am_able_to_remove_the_lowest_price_item_from_my_cart() {
-        cartPage.removeLowestPriceItems(getPriceToProductIdListInfo);
+        cartPage.removeLowestPriceItems(priceToProductIdList);
     }
 
     @Then("I am able to verify {int} items in my cart")
