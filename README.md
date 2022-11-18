@@ -27,5 +27,5 @@ In order to narrow the selection and specify which tests should run you should u
 ## Improvements
 
 * Add a new class - `NavigationMenu` - and use composition to add it in each existing page object because all pages (Cart, My Account, Shop, etc) display this navigation menu in the upper part of the page
-* Add a hook tear down @After method in order to close the driver
+* Add a hook tear down `@After` method in order to close the driver
 
