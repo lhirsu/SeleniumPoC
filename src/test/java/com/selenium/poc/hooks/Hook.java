@@ -1,4 +1,4 @@
-package com.adswizz.qa.iforecast.hooks;
+package com.selenium.poc.hooks;
 
 import io.cucumber.java.After;
 import net.thucydides.core.annotations.Steps;

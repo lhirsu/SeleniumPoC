@@ -1,4 +1,4 @@
-package com.adswizz.qa.iforecast.runners;
+package com.selenium.poc.runners;
 
 import io.cucumber.junit.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
