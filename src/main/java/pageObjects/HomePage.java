@@ -18,11 +18,6 @@ public class HomePage {
 
     WebDriver driver;
 
-    // //div[@id='primary-menu']//a
-    // //div[@id='primary-menu']//a[text()='Cart']
-    // //div[@id='primary-menu']//a[text()='Checkout']
-    // //div[@id='primary-menu']//a[text()='Shop']
-
     @FindBy(how = How.CSS, using = ".site-branding .site-title")
     private WebElement logo;
 
