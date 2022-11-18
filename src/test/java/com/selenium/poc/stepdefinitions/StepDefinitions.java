@@ -11,10 +11,7 @@ import pageObjects.CartPage;
 import pageObjects.HomePage;
 
 import java.time.Duration;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 
 public class StepDefinitions {
 
@@ -22,7 +19,7 @@ public class StepDefinitions {
     HomePage homePage;
 
     SoftAssertions softly = new SoftAssertions();
-    HashMap<String, Double> productIdToPrice;
+    TreeMap<Double, List<String>> getPriceToProductIdListInfo;
 
     WebDriver driver;
 
@@ -54,23 +51,24 @@ public class StepDefinitions {
 
     @When("I search for lowest price item")
     public void i_search_for_lowest_price_item() {
-        productIdToPrice = cartPage.getProductPriceInfo();
+        getPriceToProductIdListInfo = cartPage.getPriceToProductIdListInfo();
     }
 
     @When("I am able to remove the lowest price item from my cart")
     public void i_am_able_to_remove_the_lowest_price_item_from_my_cart() {
-        // ToDo - use productIdToPrice info
+        cartPage.removeLowestPriceItems(getPriceToProductIdListInfo);
     }
 
     @Then("I am able to verify {int} items in my cart")
     public void i_am_able_to_verify_three_items_in_my_cart(Integer itemsInCart) {
+        cartPage.reloadCartPage();
         softly.assertThat(cartPage.getNumberOfItemsInCart()).isEqualTo(itemsInCart);
-        // ToDo
     }
 
     @Then("assert all above checks")
     public void assert_all_checks() {
         softly.assertAll();
+        driver.quit();
     }
 
     private Set<Integer> getRandomDistinctIndexes(int max, int indexesNeeded) {

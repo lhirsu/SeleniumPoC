@@ -1,6 +1,6 @@
 Feature: Main Use Cases
 
-  @scenario-1  @tear_down @regression
+  @scenario-1 @regression
   Scenario Outline: 1. Simple Test Scenario
 
 

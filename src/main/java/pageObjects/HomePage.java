@@ -57,11 +57,6 @@ public class HomePage {
         return this;
     }
 
-    public HomePage addToCart(String productName) {
-        // ToDo
-        return this;
-    }
-
     public int getDisplayedProductsNumber() {
         return btn_AddToCart.size();
     }
